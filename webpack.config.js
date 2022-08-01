@@ -39,5 +39,10 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  optimization: {
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  },
 }

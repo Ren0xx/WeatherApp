@@ -2,6 +2,7 @@ import "../src/style.scss";
 import noise from '../src/images/noise.png';
 import heart from '../src/images/heart-regular.svg'
 import face from '../src/images/face-frown-regular.svg'
+import logo from '../src/images/logo.svg';
 
 const searchedCityName = document.getElementById("searchedCity");
 let temperature = document.getElementById("temperature");
@@ -11,12 +12,15 @@ const searchBtn = document.getElementById("searchBtn");
 const spinner = document.getElementById("loadSpinner");
 const weatherIcon = document.getElementById("weatherIcon");
 const weatherDesc = document.getElementById("weatherDesc");
+const myLogo = document.querySelector(".myLogo");
 
 const metric = document.getElementById("metric");
+console.log(myLogo);
 const units = ["metric", "imperial"];
 let currentUnit = units[0];
 
 weatherIcon.src = heart;
+myLogo.src = logo;
 
 async function getData(cityName) {
     try {

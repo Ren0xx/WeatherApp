@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/style.scss */ \"./src/style.scss\");\n\r\n\r\nconst searchedCityName = document.getElementById(\"searchedCity\");\r\nlet temperature = document.getElementById(\"temperature\");\r\n\r\nconst searchForm = document.getElementById(\"searchForm\");\r\nconst searchBtn = document.getElementById(\"searchBtn\");\r\nconst spinner = document.getElementById(\"loadSpinner\");\r\nconst weatherIcon = document.getElementById(\"weatherIcon\");\r\nconst weatherDesc = document.getElementById(\"weatherDesc\");\r\n\r\nconst metric = document.getElementById(\"metric\");\r\nconst units = [\"metric\", \"imperial\"];\r\nlet currentUnit = units[0];\r\n\r\nasync function getData(cityName) {\r\n    try {\r\n        currentUnit = metric.checked ? \"metric\" : \"imperial\";\r\n        const response = await fetch(\r\n            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=40e8ac432788c18ba02074a07c6815ab&units=${currentUnit}`,\r\n            { mode: \"cors\" }\r\n        );\r\n        const data = await response.json();\r\n        return data;\r\n    } catch (err) {}\r\n}\r\nfunction getIcon(iconID) {\r\n    return `https://openweathermap.org/img/wn/${iconID}@2x.png`;\r\n}\r\nfunction renderWeatherData() {\r\n    searchBtn.addEventListener(\"click\", () => {\r\n        const searchPhrase = searchForm.value.trim();\r\n        if (searchPhrase.length === 0) {\r\n            return;\r\n        }\r\n        spinner.hidden = false;\r\n        getData(searchPhrase)\r\n            .then((data) => {\r\n                weatherIcon.src = getIcon(data.weather[0].icon);\r\n                searchedCityName.textContent = `${data.name}, ${data.sys.country}`;\r\n                const currentSign = currentUnit === \"metric\" ? \"°C\" : \"°F\";\r\n                temperature.textContent = `${Math.round(\r\n                    data.main.temp\r\n                )}${currentSign}`;\r\n\r\n                weatherDesc.textContent = data.weather[0].description;\r\n                spinner.hidden = true;\r\n            })\r\n            .catch(() => {\r\n                spinner.hidden = true;\r\n                temperature.textContent = \"Something went wrong...\";\r\n                weatherIcon.src = \"../src/images/face-frown-regular.svg\";\r\n            });\r\n    });\r\n}\r\n\r\nrenderWeatherData();\r\n\r\nVANTA.CLOUDS2({\r\n    el: \"body\",\r\n    mouseControls: true,\r\n    touchControls: true,\r\n    gyroControls: false,\r\n    minHeight: 200.0,\r\n    minWidth: 200.0,\r\n    scale: 1.0,\r\n    texturePath: \"https://github.com/Ren0xx/WeatherApp/blob/main/src/images/noise.png\",\r\n    speed: 0.7,\r\n});\r\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/style.scss */ \"./src/style.scss\");\n/* harmony import */ var _src_images_noise_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/images/noise.png */ \"./src/images/noise.png\");\n/* harmony import */ var _src_images_heart_regular_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/images/heart-regular.svg */ \"./src/images/heart-regular.svg\");\n/* harmony import */ var _src_images_face_frown_regular_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/images/face-frown-regular.svg */ \"./src/images/face-frown-regular.svg\");\n\r\n\r\n\r\n\r\n\r\nconst searchedCityName = document.getElementById(\"searchedCity\");\r\nlet temperature = document.getElementById(\"temperature\");\r\n\r\nconst searchForm = document.getElementById(\"searchForm\");\r\nconst searchBtn = document.getElementById(\"searchBtn\");\r\nconst spinner = document.getElementById(\"loadSpinner\");\r\nconst weatherIcon = document.getElementById(\"weatherIcon\");\r\nconst weatherDesc = document.getElementById(\"weatherDesc\");\r\n\r\nconst metric = document.getElementById(\"metric\");\r\nconst units = [\"metric\", \"imperial\"];\r\nlet currentUnit = units[0];\r\n\r\nweatherIcon.src = _src_images_heart_regular_svg__WEBPACK_IMPORTED_MODULE_2__;\r\n\r\nasync function getData(cityName) {\r\n    try {\r\n        currentUnit = metric.checked ? \"metric\" : \"imperial\";\r\n        const response = await fetch(\r\n            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=40e8ac432788c18ba02074a07c6815ab&units=${currentUnit}`,\r\n            { mode: \"cors\" }\r\n        );\r\n        const data = await response.json();\r\n        return data;\r\n    } catch (err) {}\r\n}\r\nfunction getIcon(iconID) {\r\n    return `https://openweathermap.org/img/wn/${iconID}@2x.png`;\r\n}\r\nfunction renderWeatherData() {\r\n    searchBtn.addEventListener(\"click\", () => {\r\n        const searchPhrase = searchForm.value.trim();\r\n        if (searchPhrase.length === 0) {\r\n            return;\r\n        }\r\n        spinner.hidden = false;\r\n        getData(searchPhrase)\r\n            .then((data) => {\r\n                weatherIcon.src = getIcon(data.weather[0].icon);\r\n                searchedCityName.textContent = `${data.name}, ${data.sys.country}`;\r\n                const currentSign = currentUnit === \"metric\" ? \"°C\" : \"°F\";\r\n                temperature.textContent = `${Math.round(\r\n                    data.main.temp\r\n                )}${currentSign}`;\r\n\r\n                weatherDesc.textContent = data.weather[0].description;\r\n                spinner.hidden = true;\r\n            })\r\n            .catch(() => {\r\n                spinner.hidden = true;\r\n                temperature.textContent = \"Something went wrong...\";\r\n                weatherIcon.src = _src_images_face_frown_regular_svg__WEBPACK_IMPORTED_MODULE_3__;\r\n            });\r\n    });\r\n}\r\n\r\nrenderWeatherData();\r\n\r\nVANTA.CLOUDS2({\r\n    el: \"body\",\r\n    mouseControls: true,\r\n    touchControls: true,\r\n    gyroControls: false,\r\n    minHeight: 200.0,\r\n    minWidth: 200.0,\r\n    scale: 1.0,\r\n    texturePath: `${_src_images_noise_png__WEBPACK_IMPORTED_MODULE_1__}`,\r\n    speed: 0.7,\r\n});\r\n\n\n//# sourceURL=webpack://weatherapp/./src/index.js?");
 
 /***/ }),
 
@@ -288,6 +288,36 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 
 eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 8 8%27%3e%3cpath fill=%27%23198754%27 d=%27M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z%27/%3e%3c/svg%3e\";\n\n//# sourceURL=webpack://weatherapp/data:image/svg+xml,%253csvg_xmlns=%2527http://www.w3.org/2000/svg%2527_viewBox=%25270_0_8_8%2527%253e%253cpath_fill=%2527%2523198754%2527_d=%2527M2.3_6.73.6_4.53c-.4-1.04.46-1.4_1.1-.8l1.1_1.4_3.4-3.8c.6-.63_1.6-.27_1.2.7l-4_4.6c-.43.5-.8.4-1.1.1z%2527/%253e%253c/svg%253e?");
 
+/***/ }),
+
+/***/ "./src/images/face-frown-regular.svg":
+/*!*******************************************!*\
+  !*** ./src/images/face-frown-regular.svg ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"2b1edae4313637e56b19.svg\";\n\n//# sourceURL=webpack://weatherapp/./src/images/face-frown-regular.svg?");
+
+/***/ }),
+
+/***/ "./src/images/heart-regular.svg":
+/*!**************************************!*\
+  !*** ./src/images/heart-regular.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a695f93a6821578414e0.svg\";\n\n//# sourceURL=webpack://weatherapp/./src/images/heart-regular.svg?");
+
+/***/ }),
+
+/***/ "./src/images/noise.png":
+/*!******************************!*\
+  !*** ./src/images/noise.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"b2c85f53bced5c500eca.png\";\n\n//# sourceURL=webpack://weatherapp/./src/images/noise.png?");
+
 /***/ })
 
 /******/ 	});
@@ -344,6 +374,18 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -358,6 +400,26 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

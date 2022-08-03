@@ -1,4 +1,7 @@
 import "../src/style.scss";
+import noise from '../src/images/noise.png';
+import heart from '../src/images/heart-regular.svg'
+import face from '../src/images/face-frown-regular.svg'
 
 const searchedCityName = document.getElementById("searchedCity");
 let temperature = document.getElementById("temperature");
@@ -12,6 +15,8 @@ const weatherDesc = document.getElementById("weatherDesc");
 const metric = document.getElementById("metric");
 const units = ["metric", "imperial"];
 let currentUnit = units[0];
+
+weatherIcon.src = heart;
 
 async function getData(cityName) {
     try {
@@ -49,7 +54,7 @@ function renderWeatherData() {
             .catch(() => {
                 spinner.hidden = true;
                 temperature.textContent = "Something went wrong...";
-                weatherIcon.src = "../src/images/face-frown-regular.svg";
+                weatherIcon.src = face;
             });
     });
 }
@@ -64,6 +69,6 @@ VANTA.CLOUDS2({
     minHeight: 200.0,
     minWidth: 200.0,
     scale: 1.0,
-    texturePath: "../src/images/noise.png",
+    texturePath: `${noise}`,
     speed: 0.7,
 });

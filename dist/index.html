@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds2.min.js"></script>
+    <script src="https://kit.fontawesome.com/a461f273de.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="container-main">
+            <h3 id="searchedCity">Welcome!</h3>
+            <div class="iconCont">
+                <img id="weatherIcon" src="../src/images/heart-regular.svg" alt=""></img>
+            </div>
+            <h4 id="temperature"></h4>
+            <p id="weatherDesc"></p>
+            <div class="searchBar">
+                <input type="text" id="searchForm" class="form-control" placeholder="City name">
+                <span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="metric">
+                        <label class="form-check-label" for="metric">
+                            °C
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="imperial" checked>
+                        <label class="form-check-label" for="imperial">
+                            °F
+                        </label>
+                    </div>
+                </span>
+            </div>
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+            <div class="outer">
+                <div id="loadSpinner" class="spinner-border" hidden role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <footer>
+                <p>&copy; Created by Ren0xx <script>
+                    document.write(Date().split ` ` [3])
+                    </script>
+                </p>
+            </footer>
+            
+        </div>
+        <img class="myLogo" src="../src/images/logo.svg"></img>
+
+        <script src="./main.js" async defer></script>
+</body>
+
+</html>

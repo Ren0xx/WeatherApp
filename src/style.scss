@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 $font-stack: "Roboto", sans-serif;
-$primary-color: $blue-100;
+$primary-color: hsla(220, 23%, 75%, 0.1);
 * {
     margin: 0;
     padding: 0;
@@ -11,36 +11,31 @@ $primary-color: $blue-100;
 body {
     font: 100% $font-stack;
     background-color: $primary-color;
-}
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .container-main {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content:center;
     flex-flow: column nowrap;
-    gap: 3em;
+    gap: 1.75em;
+    height: 100vh;
+    background-color: $primary-color;
+    padding: 50px;
 }
 
 .form-control {
     width: 25rem;
 }
 
-footer {
-    position: fixed;
-    padding: 12px 12px 12px 12px;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
+
 
 .myLogo{
     position: fixed;
+    left: 0;
     bottom: 0;
     height: 5rem;
     width: 5rem;
@@ -56,4 +51,27 @@ footer {
 .searchBar{
     display: flex;
     column-gap: 2em;
+}
+.iconCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height:100px;
+
+}
+footer {
+    position: fixed;
+    padding: 12px 12px 12px 12px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+svg{
+    height: 55px;
+    width: 55px;
+}
+
+p::first-letter {
+    text-transform:capitalize;
 }

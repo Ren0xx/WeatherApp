@@ -5,6 +5,12 @@ const searchForm = document.getElementById("searchForm");
 const spinner = document.getElementById("loadSpinner");
 let temperature = document.getElementById("temperature");
 
+const metric = document.getElementById("metric");
+const imperial = document.getElementById("imperial");
+
+const units = ['metric', 'imperial'];
+let currentUnit = units[0];
+
 // VANTA.CLOUDS2({
 //     el: "body",
 //     mouseControls: true,
@@ -19,9 +25,9 @@ let temperature = document.getElementById("temperature");
 
 async function getData(cityName) {
     try {
-        
+        currentUnit = (metric.checked) ? "metric" : "imperial";
         const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=40e8ac432788c18ba02074a07c6815ab`,
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=40e8ac432788c18ba02074a07c6815ab&units=${currentUnit}`,
             { mode: "cors" }
         );
         const data = await response.json();
@@ -31,13 +37,11 @@ async function getData(cityName) {
 }
 
 function processData(data) {
-    const clouds = data.clouds.all;
     const main = data.main;
-    const wind = data.wind;
+    const weather = data.weather;
     const obj = {
         main: main,
-        wind: wind,
-        clouds: clouds,
+        weather: weather,
     };
 
     return obj;

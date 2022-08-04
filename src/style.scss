@@ -10,7 +10,6 @@ $primary-color: hsla(220, 23%, 75%, 0.1);
 
 body {
     font: 100% $font-stack;
-    background-color: $primary-color;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -19,7 +18,7 @@ body {
 .container-main {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-flow: column nowrap;
     gap: 1.75em;
     height: 100vh;
@@ -31,9 +30,7 @@ body {
     width: 25rem;
 }
 
-
-
-.myLogo{
+.myLogo {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -41,24 +38,22 @@ body {
     width: 5rem;
 }
 
-
-.outer{
+.outer {
     margin: 15px;
     height: 25px;
     width: 25px;
 }
 
-.searchBar{
+.searchBar {
     display: flex;
     column-gap: 2em;
 }
-.iconCont{
+.iconCont {
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100px;
-    height:100px;
-
+    width: 100px;
+    height: 100px;
 }
 footer {
     position: fixed;
@@ -67,11 +62,11 @@ footer {
     width: 100%;
     text-align: center;
 }
-svg{
+svg {
     height: 55px;
     width: 55px;
 }
 
 p::first-letter {
-    text-transform:capitalize;
+    text-transform: capitalize;
 }

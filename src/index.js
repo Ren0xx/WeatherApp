@@ -15,7 +15,6 @@ const weatherDesc = document.getElementById("weatherDesc");
 const myLogo = document.querySelector(".myLogo");
 
 const metric = document.getElementById("metric");
-console.log(myLogo);
 const units = ["metric", "imperial"];
 let currentUnit = units[0];
 

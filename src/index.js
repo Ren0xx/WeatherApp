@@ -58,6 +58,8 @@ function renderWeatherData() {
                 spinner.hidden = true;
                 temperature.textContent = "Something went wrong...";
                 weatherIcon.src = face;
+                weatherDesc.textContent = '';
+                searchedCityName.textContent = '';
             });
     });
 }
